@@ -34,9 +34,8 @@ class ProductSave implements \Magento\Framework\Event\ObserverInterface
         $contact_phone = $params['manufacturer']["contact_phone"];
         $contact_name = $params['manufacturer']["contact_name"];
 
-        $update = $this->model->updatebyProductId($product_id,$name,$address,$contact_phone,$contact_name);
-
-        if(!$update){
+        $check = $this->model->selectbyProductId($product_id);
+        if(count($check) != 1){
             $data[] =
                 array(
                     'product_id' => $product_id,
@@ -49,6 +48,8 @@ class ProductSave implements \Magento\Framework\Event\ObserverInterface
                 $this->model->setData($key);
                 $this->model->save();
             }
+        }else{
+            $this->model->updatebyProductId($product_id,$name,$address,$contact_phone,$contact_name);
         }
         return $this;
     }
