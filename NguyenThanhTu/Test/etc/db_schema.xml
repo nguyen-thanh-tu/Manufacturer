@@ -1,0 +1,16 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="manufacturer" resource="default" engine="innodb" comment="Banner Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" default="null" comment="Product ID"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="false" default="" comment="Manufacturer name"/>
+        <column xsi:type="varchar" name="address" length="255" nullable="false" default="" comment="Manufacturer address"/>
+        <column xsi:type="int" name="contact_phone" padding="13" unsigned="true" nullable="false" comment="Contact phone"/>
+        <column xsi:type="varchar" name="contact_name" length="255" nullable="false" default="" comment="Contact personnel’s name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="PRODUCT_ID_TYPE">
+            <column name="product_id"/>
+        </constraint>
+    </table>
+</schema>

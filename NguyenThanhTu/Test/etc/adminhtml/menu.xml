@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu >
+        <add id="NguyenThanhTu_Test::manufacturer_manager" title="Manufacturer Manager" module="NguyenThanhTu_Test" resource="NguyenThanhTu_Test::manufacturer_manager" sortOrder="10"/>
+        <add id="NguyenThanhTu_Test::list_manufacturer" title="List Manufacturer" module="NguyenThanhTu_Test" action="manufacturer" resource="NguyenThanhTu_Test::manufacturer_manager" parent="NguyenThanhTu_Test::manufacturer_manager"/>
+        <add id="NguyenThanhTu_Test::new_manufacturer" title="New Manufacturer" module="NguyenThanhTu_Test" action="manufacturer/index/new" resource="NguyenThanhTu_Test::save" parent="NguyenThanhTu_Test::manufacturer_manager"/>
+    </menu>
+</config>
